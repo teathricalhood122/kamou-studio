@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAMOU | Self Photo Studio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Philosopher"', 'serif'],
+                        mono: ['"Courier New"', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .barcode-gradient {
+            background: repeating-linear-gradient(to right, #000 0px, #000 2px, transparent 2px, transparent 4px, #000 4px, #000 5px, transparent 5px, transparent 8px);
+        }
+        /* Trik Paksa Warna Icon Burger */
+        .force-black { background-color: #000000 !important; }
+        .force-white { background-color: #ffffff !important; }
+    </style>
+</head>
+<body class="bg-white text-black antialiased font-sans">
+
+    <nav class="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center transition-all duration-300 mix-blend-difference text-white" id="navbar">
+        
+        <button onclick="toggleMenu()" class="p-2 relative group focus:outline-none z-50">
+            <div class="space-y-2" id="hamburgerIcon">
+                <span class="block w-8 h-0.5 bg-white transition-all duration-300 group-hover:w-6"></span>
+                <span class="block w-6 h-0.5 bg-white transition-all duration-300 group-hover:w-8"></span>
+                <span class="block w-8 h-0.5 bg-white transition-all duration-300"></span>
+            </div>
+        </button>
+
+        <a href="#home" id="nav-logo" class="opacity-0 scale-90 transition-all duration-500 flex flex-col items-center group">
+            
+            <span class="text-2xl md:text-3xl font-bold tracking-[0.1em] font-serif leading-none">
+                KAMOU.
+            </span>
+            
+            <span class="text-[10px] md:text-[12px] tracking-[0.4em]  font-serif mt-1 opacity-80">
+                photostudio
+            </span>
+
+        </a>
+
+        <a href="https://kamouphotostudio.youcanbook.me/" class="p-2 hover:opacity-70 transition z-50">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                
+            </svg>
+        </a>
+    </nav>
+
+    <div id="mobileMenu" class="fixed inset-0 bg-white text-black z-40 transform -translate-x-full transition-transform duration-500 ease-in-out flex flex-col justify-center px-8">
+        <div class="space-y-6">
+            <a href="#home" onclick="toggleMenu()" class="block text-4xl font-bold uppercase tracking-tighter hover:pl-4 transition-all duration-300 border-b-2 border-transparent hover:border-black w-max font-sans">Home</a>
+            <a href="#about" onclick="toggleMenu()" class="block text-4xl font-bold uppercase tracking-tighter hover:pl-4 transition-all duration-300 border-b-2 border-transparent hover:border-black w-max font-sans">About</a>
+            <a href="#gallery" onclick="toggleMenu()" class="block text-4xl font-bold uppercase tracking-tighter hover:pl-4 transition-all duration-300 border-b-2 border-transparent hover:border-black w-max font-sans">Gallery</a>
+            <a href="#pricelist" onclick="toggleMenu()" class="block text-4xl font-bold uppercase tracking-tighter bg-black text-white px-2 py-1 transform -skew-x-6 w-max font-sans">Pricelist</a>
+        </div>
+        <div class="absolute bottom-10 left-8">
+            <p class="text-xs text-gray-400 uppercase tracking-widest mb-2">Socials</p>
+            <div class="flex gap-4 text-sm font-bold">
+                <a href="https://instagram.com/kamou.studio" class="hover:underline">Instagram</a>
+                <a href="https://tiktok.com/@kamou.studio" class="hover:underline">TikTok</a>
+            </div>
+        </div>
+    </div>
+
+    <header id="home" class="relative w-full bg-black font-serif text-white overflow-hidden">
+        <div class="relative w-full">
+            <img src="img/hero-kamou.jpg" alt="Hero Background" class="w-full h-auto block opacity-70 grayscale">
+            
+            <div class="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-4">
+                <p class="text-[10px] md:text-xs tracking-[0.4em] uppercase mb-2 md:mb-4 opacity-90 font-sans">momentkubersama</p>
+                <h1 class="text-5xl md:text-7xl lg:text-9xl font-bold leading-none mb-2">KAMOU.</h1>
+                <span class="block text-[10px] md:text-sm tracking-[0.5em] uppercase mb-6 md:mb-10 opacity-80 font-sans">photostudio</span>
+                
+                <a href="https://kamouphotostudio.youcanbook.me/" class="inline-block bg-white text-black px-6 py-2 md:px-8 md:py-3 text-[10px] md:text-sm font-bold tracking-widest uppercase hover:bg-black hover:text-white border border-white transition-all font-sans">
+                    Book Now
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="py-24 bg-gray-50 text-black">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+            <div class="w-full md:w-1/2 relative">
+                <div class="absolute inset-0 border-2 border-black transform translate-x-4 translate-y-4"></div>
+                <img src="img/7.jpg" alt="About Kamou" class="relative z-10 w-full h-[400px] object-cover grayscale hover:grayscale-0 transition duration-500">
+            </div>
+            <div class="w-full md:w-1/2">
+                <span class="text-xs tracking-[0.3em] uppercase text-gray-500 mb-2 block font-sans">Our Concept</span>
+                <h2 class="text-4xl md:text-5xl font-serif mb-6 leading-tight">Privacy meets<br>Creativity.</h2>
+                <p class="text-gray-600 leading-relaxed mb-6 font-sans text-sm md:text-base">
+                    Di Kamou, kamu adalah fotografernya. Kami menyediakan ruang privat dengan *professional lighting*, di mana kamu bisa bebas berekspresi tanpa rasa canggung.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white text-black border-t border-gray-200">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-serif text-center mb-16">How to Kamou.</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                <div class="space-y-4 group">
+                    <div class="w-16 h-16 mx-auto border border-black rounded-full flex items-center justify-center text-xl font-serif group-hover:bg-black group-hover:text-white transition duration-300">1</div>
+                    <h3 class="text-lg font-bold uppercase tracking-widest">Snap</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed px-4">
+                        Datang, rapihin rambut dikit, ambil remote, dan mulai foto sepuasnya selama 15 menit. Bebas gaya!
+                    </p>
+                </div>
+
+                <div class="space-y-4 group">
+                    <div class="w-16 h-16 mx-auto border border-black rounded-full flex items-center justify-center text-xl font-serif group-hover:bg-black group-hover:text-white transition duration-300">2</div>
+                    <h3 class="text-lg font-bold uppercase tracking-widest">Select</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed px-4">
+                        Waktu habis? Santai. Pilih foto terbaikmu di layar monitor yang gede. Semua *softfile* bakal dikirim ke kamu.
+                    </p>
+                </div>
+
+                <div class="space-y-4 group">
+                    <div class="w-16 h-16 mx-auto border border-black rounded-full flex items-center justify-center text-xl font-serif group-hover:bg-black group-hover:text-white transition duration-300">3</div>
+                    <h3 class="text-lg font-bold uppercase tracking-widest">Take Home</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed px-4">
+                        Tunggu bentar, foto cetak (printed photo) kamu bakal jadi dalam hitungan menit buat dibawa pulang.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-24 bg-[#111] text-white">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-3xl font-serif text-center mb-12">Captured Moments</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 auto-rows-[250px]">
+                <div class="row-span-2 relative overflow-hidden group"><img src="img/1.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0"></div>
+                <div class="relative overflow-hidden group"><img src="img/2.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0"></div>
+                <div class="relative overflow-hidden group"><img src="img/3.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0"></div>
+                <div class="col-span-2 relative overflow-hidden group"><img src="img/4.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricelist" class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-4xl font-serif text-center mb-12">Pricelist</h2>
+            <div class="flex flex-wrap justify-center gap-8">
+                <div class="w-80 border border-black p-6 bg-white shadow-[8px_8px_0px_rgba(0,0,0,0.1)] font-mono text-sm relative">
+                    <div class="text-center border-b border-black pb-4 mb-4"><h3 class="font-serif text-2xl font-bold">KAMOU.</h3><span class="text-[10px] tracking-widest uppercase">photostudio</span></div>
+                    <div class="space-y-4">
+                        <div><p class="font-bold mb-1">ITEM:</p><p>SELF PHOTO<br>BASIC PACKAGE</p></div>
+                        <div class="border-b border-dashed border-black"></div>
+                        <ul class="space-y-1 text-xs text-gray-600"><li>- 15 Min Shoot</li><li>- All Softfile</li><li>- Free Property</li></ul>
+                        <div class="border-b border-dashed border-black"></div>
+                        <div class="flex justify-between items-end"><span>TOTAL:</span><span class="text-lg font-bold">IDR 35K</span></div>
+                    </div>
+                    <div class="h-8 w-full mt-6 barcode-gradient opacity-80"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <section id="location" class="py-24 bg-black text-white">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            
+            <div>
+                <h2 class="text-4xl font-serif mb-8">Find Us.</h2>
+                <div class="space-y-6 font-sans">
+                    <div>
+                        <h3 class="text-lg font-bold uppercase tracking-widest mb-2">Address</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Jl. Hayam Wuruk No.90B, Bejagung Kidul, Bejagung, <br>
+                            Kec. Semanding, Kabupaten Tuban, Jawa Timur 62381
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-bold uppercase tracking-widest mb-2">Opening Hours</h3>
+                        <p class="text-gray-400">Everyday: 10.00 - 21.00 WIB</p>
+                    </div>
+
+                    <div class="pt-6">
+                        <a href="https://goo.gl/maps/PolinemaLocation" target="_blank" class="inline-block bg-white text-black px-8 py-3 text-xs font-bold tracking-widest uppercase hover:bg-gray-200 transition">
+                            Get Directions
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full h-[400px] bg-gray-800 grayscale hover:grayscale-0 transition duration-500 relative">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.437194682056!2d112.61334817449987!3d-7.953686992070387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78827928956291%3A0x67a39e80629743c3!2sPoliteknik%20Negeri%20Malang!5e0!3m2!1sid!2sid!4v1704200000000!5m2!1sid!2sid" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-black text-white py-10 text-center text-xs tracking-widest border-t border-gray-800">
+        <p>&copy; 2026 KAMOU STUDIO. TUBAN.</p>
+    </footer>
+
+    <script>
+        // 1. LOGIKA SCROLL TRANSITION (Hero Logo -> Navbar Logo)
+        window.addEventListener('scroll', function() {
+            const navLogo = document.getElementById('nav-logo');
+            const scrollPosition = window.scrollY;
+            
+            // Jarak scroll kapan logo navbar muncul (300px dari atas)
+            if (scrollPosition > 300) {
+                navLogo.classList.remove('opacity-0', 'scale-90');
+                navLogo.classList.add('opacity-100', 'scale-100');
+            } else {
+                navLogo.classList.add('opacity-0', 'scale-90');
+                navLogo.classList.remove('opacity-100', 'scale-100');
+            }
+        });
+
+        // 2. LOGIKA BURGER MENU (TOMBOL X HITAM)
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const navbar = document.getElementById('navbar');
+            const hamburger = document.getElementById('hamburgerIcon');
+            const bars = Array.from(hamburger.children);
+
+            if (menu.classList.contains('-translate-x-full')) {
+                // == BUKA MENU ==
+                menu.classList.remove('-translate-x-full');
+                
+                // Matikan efek blend biar warna gak kacau
+                navbar.classList.remove('mix-blend-difference');
+                navbar.classList.remove('text-white');
+                navbar.classList.add('text-black'); // Paksa text jadi hitam
+
+                // Animasi Icon jadi X
+                bars[0].classList.add('rotate-45', 'translate-y-2.5');
+                bars[1].classList.add('opacity-0');
+                bars[2].classList.add('-rotate-45', '-translate-y-2.5');
+
+                // FORCE BLACK (Paksa Warna Hitam)
+                bars.forEach(bar => {
+                    bar.classList.remove('bg-white');
+                    bar.classList.add('force-black'); // Pake class CSS 'jahat' !important
+                });
+
+            } else {
+                // == TUTUP MENU ==
+                menu.classList.add('-translate-x-full');
+                
+                // Balikin efek blend biar keren lagi di Hero
+                setTimeout(() => {
+                    navbar.classList.add('mix-blend-difference');
+                    navbar.classList.remove('text-black');
+                    navbar.classList.add('text-white');
+                }, 300);
+
+                // Animasi balik jadi Garis
+                bars[0].classList.remove('rotate-45', 'translate-y-2.5');
+                bars[1].classList.remove('opacity-0');
+                bars[2].classList.remove('-rotate-45', '-translate-y-2.5');
+
+                // FORCE WHITE (Paksa Warna Putih)
+                bars.forEach(bar => {
+                    bar.classList.remove('force-black');
+                    bar.classList.add('bg-white');
+                });
+            }
+        }
+    </script>
+</body>
+</html>
