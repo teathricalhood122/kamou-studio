@@ -2,6 +2,16 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <script>
+        // Ganti 'rahasia123' jadi password yang lo mau
+        var pass = prompt("Website ini terkunci. Masukkan Password:");
+        
+        if (pass != "rahasia123") {
+            // Kalau salah, tendang ke Google
+            alert("Password Salah! Hush sana!");
+            window.location.href = "https://www.google.com"; 
+        }
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kamouphotostudio</title>
 
