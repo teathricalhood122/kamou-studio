@@ -68,6 +68,15 @@
         .force-black { background-color: #000000 !important; }
         .force-white { background-color: #ffffff !important; }
     </style>
+    <button 
+        id="backToTop" 
+        onclick="scrollToTop()" 
+        class="fixed bottom-24 right-8 z-40 bg-white text-black border border-black p-3  shadow-lg translate-y-20 opacity-0 transition-all duration-500 hover:bg-black hover:text-white group hidden"
+    >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 group-hover:-translate-y-1 transition duration-300">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+        </svg>
+    </button>
 </head>
 <body class="bg-white text-black antialiased font-sans">
 
@@ -612,6 +621,33 @@
     duration: 1000,
     once: true,
     });
+
+    // LOGIKA BACK TO TOP
+    const backToTopBtn = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+            // Kalau scroll udah lebih dari 500px, Munculin tombol
+            backToTopBtn.classList.remove('hidden');
+            setTimeout(() => {
+                backToTopBtn.classList.remove('translate-y-20', 'opacity-0');
+            }, 10);
+        } else {
+            // Kalau di atas, Umpetin tombol
+            backToTopBtn.classList.add('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                backToTopBtn.classList.add('hidden');
+            }, 500);
+        }
+    });
+
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
 </script>
+
 </body>
 </html>
