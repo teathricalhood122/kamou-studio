@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <!-- <script>
@@ -40,12 +40,13 @@
     <meta name="apple-mobile-web-app-title" content="Kamou" />
     <link rel="manifest" href="img/site.webmanifest" />
     <!-- end favicon -->
+
+    <!-- tailwind css -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -70,7 +71,12 @@
 </head>
 <body class="bg-white text-black antialiased font-sans">
 
-    <nav class="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center transition-all duration-300 mix-blend-difference text-white" id="navbar">
+    <nav 
+        class="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center transition-all duration-300 mix-blend-difference text-white" 
+        id="navbar"
+        data-aos="fade-down"
+        data-aos-duration="1200"
+    >
         
         <button onclick="toggleMenu()" class="p-2 relative group focus:outline-none z-50">
             <div class="space-y-2" id="hamburgerIcon">
@@ -81,21 +87,17 @@
         </button>
 
         <a href="#home" id="nav-logo" class="opacity-0 scale-90 transition-all duration-500 flex flex-col items-center group">
-            
             <span class="text-2xl md:text-3xl font-bold tracking-[0.1em] font-serif leading-none">
                 KAMOU.
             </span>
-            
-            <span class="text-[10px] md:text-[12px] tracking-[0.4em]  font-serif mt-1 opacity-80">
+            <span class="text-[10px] md:text-[12px] tracking-[0.4em] font-serif mt-1 opacity-80">
                 photostudio
             </span>
-
         </a>
 
         <a href="https://kamouphotostudio.youcanbook.me/" class="p-2 hover:opacity-70 transition z-50">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
-                
             </svg>
         </a>
     </nav>
@@ -122,10 +124,11 @@
             <img src="img/hero-kamou.jpg" alt="Hero Background" class="w-full h-auto block opacity-70 grayscale">
             
             <div class="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-4">
-                <h1 class="text-5xl md:text-7xl lg:text-9xl font-bold leading-none mb-2">KAMOU.</h1>
-                <span class="block text-[10px] md:text-sm tracking-[0.5em] uppercase mb-6 md:mb-10 opacity-80 font-serif">photostudio</span>
+                <h1 class="text-5xl md:text-7xl lg:text-9xl font-bold leading-none mb-2" data-aos="fade-up" data-aos-duration="1000">KAMOU.</h1>
+                <span class="block text-[10px] md:text-sm tracking-[0.5em] uppercase mb-6 md:mb-10 opacity-80 font-serif" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">photostudio</span>
                 
-                <a href="https://kamouphotostudio.youcanbook.me/" class="inline-block bg-white text-black px-6 py-2 md:px-8 md:py-3 text-[10px] md:text-sm font-bold tracking-widest uppercase hover:bg-black hover:text-white border border-white transition-all font-sans">
+                <a href="https://kamouphotostudio.youcanbook.me/" class="inline-block bg-white text-black px-6 py-2 md:px-8 md:py-3 text-[10px] md:text-sm font-bold tracking-widest uppercase hover:bg-black hover:text-white border border-white transition-all font-sans"
+                data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
                     Booking Sekarang!
                 </a>
             </div>
@@ -133,12 +136,12 @@
     </header>
 
     <section id="about" class="py-24 bg-gray-50 text-black">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12" data-aos="fade-right" data-aos-duration="1200">
             <div class="w-full md:w-1/2 relative">
                 <div class="absolute inset-0 border-2 border-black transform translate-x-4 translate-y-4"></div>
                 <img src="img/7.jpg" alt="About Kamou" class="relative z-10 w-full h-[400px] object-cover grayscale hover:grayscale-0 transition duration-500">
             </div>
-            <div class="w-full md:w-1/2">
+            <div class="w-full md:w-1/2" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
                 <span class="text-xs tracking-[0.3em]  text-gray-500 mb-2 italic block font-sans">#abadikanmomentmubersamakamou</span>
                 <h2 class="text-4xl md:text-5xl font-serif mb-6 leading-tight">Lukis Kenangan Bersama Orang Tercinta dan<br> Abadikan Momen Kebersamaanmu.</h2>
                 <p class="text-gray-600 leading-relaxed mb-6 font-sans text-sm md:text-base">
@@ -150,18 +153,18 @@
 
     <section class="py-24 bg-white text-black border-t border-gray-200">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-serif text-center mb-16">Gimana Cara Fotonya?.</h2>
+            <h2 class="text-3xl md:text-4xl font-serif text-center mb-16" data-aos="fade-down" data-aos-duration="1000">Gimana Cara Fotonya?.</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-                <div class="space-y-4 group">
-                    <div class="w-16 h-16 mx-auto border border-black rounded-full flex items-center justify-center text-xl font-serif group-hover:bg-black group-hover:text-white transition duration-300">1</div>
+                <div class="space-y-4 group" div class="space-y-4 group" data-aos="fade-up">
+                    <div class="w-16 h-16 mx-auto border border-black rounded-full flex items-center justify-center text-xl font-serif group-hover:bg-black group-hover:text-white transition duration-300" >1</div>
                     <h3 class="text-lg font-bold uppercase tracking-widest">Booking</h3>
                     <p class="text-gray-500 text-sm leading-relaxed px-4">
                         Sebelum datang ke studio, alangkah baiknya kamu booking dan pilih paketnya terlebih dahulu ya!
                     </p>
                 </div>
 
-                <div class="space-y-4 group">
+                <div class="space-y-4 group" data-aos="fade-up" data-aos-delay="200">
                     <div class="w-16 h-16 mx-auto border border-black rounded-full flex items-center justify-center text-xl font-serif group-hover:bg-black group-hover:text-white transition duration-300">2</div>
                     <h3 class="text-lg font-bold uppercase tracking-widest">Datang Ke Studio</h3>
                     <p class="text-gray-500 text-sm leading-relaxed px-4">
@@ -169,7 +172,7 @@
                     </p>
                 </div>
 
-                <div class="space-y-4 group">
+                <div class="space-y-4 group" data-aos="fade-up" data-aos-delay="400">
                     <div class="w-16 h-16 mx-auto border border-black rounded-full flex items-center justify-center text-xl font-serif group-hover:bg-black group-hover:text-white transition duration-300">3</div>
                     <h3 class="text-lg font-bold uppercase tracking-widest">Bawa Momen Pulang</h3>
                     <p class="text-gray-500 text-sm leading-relaxed px-4">
@@ -184,57 +187,57 @@
         <div class="max-w-7xl mx-auto px-6">
             
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-serif mb-4">Galeri Kamou.</h2>
-                <p class="text-gray-400">Intip lukisan berkesan teman-teman Kamou.</p>
+                <h2 class="text-4xl md:text-5xl font-serif mb-4" data-aos="fade-down" data-aos-duration="1000">Galeri Kamou.</h2>
+                <p class="text-gray-400" data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000">Intip lukisan berkesan teman-teman Kamou.</p>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 
-                <div class="aspect-[3/4] overflow-hidden bg-gray-900 group relative">
+                <div class="aspect-[3/4] overflow-hidden bg-gray-900 group relative cursor-pointer" onclick="openPreview('img/1.jpg')" data-aos="fade-up" data-aos-delay="0" >
                     <img src="img/1.jpg" alt="Gallery 1" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                 </div>
 
-                <div class="aspect-[3/4] overflow-hidden bg-gray-900 group relative">
+                <div class="aspect-[3/4] overflow-hidden bg-gray-900 group relative cursor-pointer" onclick="openPreview('img/2.jpg')" data-aos="fade-up" data-aos-delay="150">
                     <img src="img/2.jpg" alt="Gallery 2" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                 </div>
 
-                <div class="aspect-[3/4] overflow-hidden bg-gray-900 group relative">
+                <div class="aspect-[3/4] overflow-hidden bg-gray-900 group relative cursor-pointer" onclick="openPreview('img/3.jpg')" data-aos="fade-up" data-aos-delay="300">
                     <img src="img/3.jpg" alt="Gallery 3" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                 </div>
                 
-                <div class="aspect-[3/4] overflow-hidden bg-gray-900 group relative">
+                <div class="aspect-[3/4] overflow-hidden bg-gray-900 group relative cursor-pointer" onclick="openPreview('img/4.jpg')" data-aos="fade-up" data-aos-delay="450">
                     <img src="img/4.jpg" alt="Gallery 4" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                 </div>
                 
-                <div class="aspect-[3/4] overflow-hidden bg-gray-900 group relative">
+                <div class="aspect-[3/4] overflow-hidden bg-gray-900 group relative cursor-pointer" onclick="openPreview('img/5.jpg')" data-aos="fade-up" data-aos-delay="0">
                     <img src="img/5.jpg" alt="Gallery 5" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                 </div>
 
-                 <div class="aspect-[3/4] overflow-hidden bg-gray-900 group relative">
+                 <div class="aspect-[3/4] overflow-hidden bg-gray-900 group relative cursor-pointer" onclick="openPreview('img/6.jpg')" data-aos="fade-up" data-aos-delay="150">
                     <img src="img/6.jpg" alt="Gallery 6" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                 </div>
 
-                 <div class="aspect-[3/4] overflow-hidden bg-gray-900 group relative">
+                 <div class="aspect-[3/4] overflow-hidden bg-gray-900 group relative cursor-pointer" onclick="openPreview('img/77.jpg')" data-aos="fade-up" data-aos-delay="300">
                     <img src="img/77.jpg" alt="Gallery 7" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                 </div>
 
-                 <div class="aspect-[3/4] overflow-hidden bg-gray-900 group relative">
+                 <div class="aspect-[3/4] overflow-hidden bg-gray-900 group relative cursor-pointer" onclick="openPreview('img/8.jpg')" data-aos="fade-up" data-aos-delay="450">
                     <img src="img/8.jpg" alt="Gallery 8" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                 </div>
                 
-                 <div class="aspect-[3/4] overflow-hidden bg-gray-900 group relative">
+                 <div class="aspect-[3/4] overflow-hidden bg-gray-900 group relative cursor-pointer" onclick="openPreview('img/9.jpg')" data-aos="fade-up" data-aos-delay="0">
                     <img src="img/9.jpg" alt="Gallery 9" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                 </div>
 
-                 <div class="aspect-[3/4] overflow-hidden bg-gray-900 group relative">
+                 <div class="aspect-[3/4] overflow-hidden bg-gray-900 group relative cursor-pointer" onclick="openPreview('img/10.jpg')" data-aos="fade-up" data-aos-delay="150">
                     <img src="img/10.jpg" alt="Gallery 10" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                 </div>
 
-                 <div class="aspect-[3/4] overflow-hidden bg-gray-900 group relative">
+                 <div class="aspect-[3/4] overflow-hidden bg-gray-900 group relative cursor-pointer" onclick="openPreview('img/11.jpg')"data-aos="fade-up" data-aos-delay="300">
                     <img src="img/11.jpg" alt="Gallery 11" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                 </div>
 
-                 <div class="aspect-[3/4] overflow-hidden bg-gray-900 group relative">
+                 <div class="aspect-[3/4] overflow-hidden bg-gray-900 group relative cursor-pointer" onclick="openPreview('img/12.jpg')"data-aos="fade-up" data-aos-delay="450">
                     <img src="img/12.jpg" alt="Gallery 12" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                 </div>
 
@@ -245,13 +248,13 @@
         <div class="max-w-6xl mx-auto px-6">
             
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-serif mb-4">Pilih Paketmu.</h2>
-                <p class="text-gray-500">Harga terjangkau, kualitas studio profesional.</p>
+                <h2 class="text-4xl md:text-5xl font-serif mb-4" data-aos="fade-down" data-aos-duration="1000">Pilih Paketmu.</h2>
+                <p class="text-gray-500" data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000">Harga terjangkau, kualitas studio profesional.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                 
-                <div class="border border-gray-200 p-8 hover:shadow-xl transition text-center group bg-white">
+                <div class="border border-gray-200 p-8 hover:shadow-xl transition text-center group bg-white" data-aos="fade-up">
                     <h3 class="text-xl font-bold mb-2">Single Selfphoto</h3>
                     <p class="text-gray-400 text-sm mb-6">Me Time / Foto Profil</p>
                     <div class="text-4xl font-serif mb-6">35k <span class="text-sm text-gray-400 font-sans">/sesi</span></div>
@@ -265,7 +268,7 @@
                     <a href="https://kamouphotostudio.youcanbook.me/" class="block w-full py-3 border border-black hover:bg-black hover:text-white transition uppercase tracking-widest text-xs font-bold">Booking</a>
                 </div>
 
-                <div class="border-2 border-black bg-black text-white p-10 shadow-2xl transform md:-translate-y-4 text-center relative">
+                <div class="border-2 border-black bg-black text-white p-10 shadow-2xl transform md:-translate-y-4 text-center relative " data-aos="zoom-in" data-aos-delay="200" >
                     <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-yellow-400 text-black px-4 py-1 text-xs font-bold uppercase tracking-wider border border-black">
                         Paling Laris
                     </div>
@@ -284,7 +287,7 @@
                     <a href="https://kamouphotostudio.youcanbook.me/" class="block w-full py-4 bg-white text-black border border-white hover:bg-gray-200 transition uppercase tracking-widest text-sm font-bold">Booking Sekarang</a>
                 </div>
 
-                <div class="border border-gray-200 p-8 hover:shadow-xl transition text-center group bg-white">
+                <div class="border border-gray-200 p-8 hover:shadow-xl transition text-center group bg-white" data-aos="fade-up" data-aos-delay="400">
                     <h3 class="text-xl font-bold mb-2">Group Selfphoto</h3>
                     <p class="text-gray-400 text-sm mb-6">Genk / Keluarga Kecil</p>
                     <div class="text-4xl font-serif mb-6">85k <span class="text-sm text-gray-400 font-sans">/sesi</span></div>
@@ -300,17 +303,38 @@
 
             </div>
 
-            <div class="mt-16 text-center">
-                <p class="text-gray-500 mb-6 italic">
-                    "Minmou ada paket Wisuda atau Keluarga gak?"<br><br>
-                    <span class="font-bold text-black not-italic">ADA DONG! cek disini</span>
+           <div class="mt-16 text-center">
+                
+                <p 
+                    class="text-gray-500 text-lg italic font-serif mb-2"
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                >
+                    "Minmou ada paket Wisuda atau Keluarga gak?"
                 </p>
-                <a href="pricelist.html" class="inline-flex items-center justify-center px-10 py-5 bg-black text-white text-sm font-bold uppercase tracking-[0.2em] hover:bg-gray-800 hover:scale-105 transition duration-300 group">
-                    Lihat Seluruh Harga
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-3 transform group-hover:translate-x-2 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                </a>
+
+                <h3 
+                    class="text-2xl font-bold mb-8"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                    data-aos-duration="1000"
+                >
+                    ADA DONG! <span class="font-normal text-base lowercase">cek disini</span>
+                </h3>
+
+                <div 
+                    data-aos="zoom-in" 
+                    data-aos-delay="400"
+                    data-aos-duration="1000"
+                >
+                    <a href="pricelist.html" class="inline-flex items-center justify-center px-10 py-5 bg-black text-white text-sm font-bold uppercase tracking-[0.2em] hover:bg-gray-800 hover:scale-105 transition duration-300 group shadow-lg">
+                        Lihat Seluruh Harga
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-3 transform group-hover:translate-x-2 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
+
             </div>
         </div>
     </section>
@@ -327,7 +351,7 @@
 
             <div class="flex flex-wrap justify-center gap-4">
                 
-                <div onclick="openPreview('img/bg-red.jpg')" class="group relative cursor-pointer w-[45%] md:w-[23%]">
+                <div onclick="openPreview('img/bg-red.jpg')" class="group relative cursor-pointer w-[45%] md:w-[23%]" data-aos="fade-up" data-aos-delay="0">
                     <div class="aspect-[3/4] overflow-hidden bg-gray-800 border border-gray-800 group-hover:border-white transition duration-300">
                         <img src="img/bg-red.jpg" alt="Flame Red" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
                     </div>
@@ -336,7 +360,7 @@
                     </div>
                 </div>
 
-                <div onclick="openPreview('img/bg-navy.jpg')" class="group relative cursor-pointer w-[45%] md:w-[23%]">
+                <div onclick="openPreview('img/bg-navy.jpg')" class="group relative cursor-pointer w-[45%] md:w-[23%]" data-aos="fade-up" data-aos-delay="100">
                     <div class="aspect-[3/4] overflow-hidden bg-gray-800 border border-gray-800 group-hover:border-white transition duration-300">
                         <img src="img/bg-navy.jpg" alt="Dark Navy" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
                     </div>
@@ -345,7 +369,7 @@
                     </div>
                 </div>
 
-                <div onclick="openPreview('img/bg-mint.jpg')" class="group relative cursor-pointer w-[45%] md:w-[23%]">
+                <div onclick="openPreview('img/bg-mint.jpg')" class="group relative cursor-pointer w-[45%] md:w-[23%]"data-aos="fade-up" data-aos-delay="200">
                     <div class="aspect-[3/4] overflow-hidden bg-gray-800 border border-gray-800 group-hover:border-white transition duration-300">
                         <img src="img/bg-mint.jpg" alt="Mint" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
                     </div>
@@ -354,7 +378,7 @@
                     </div>
                 </div>
 
-                <div onclick="openPreview('img/bg-white.jpg')" class="group relative cursor-pointer w-[45%] md:w-[23%]">
+                <div onclick="openPreview('img/bg-white.jpg')" class="group relative cursor-pointer w-[45%] md:w-[23%]"data-aos="fade-up" data-aos-delay="300">
                     <div class="aspect-[3/4] overflow-hidden bg-gray-800 border border-gray-800 group-hover:border-white transition duration-300">
                         <img src="img/bg-white.jpg" alt="White" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
                     </div>
@@ -363,7 +387,7 @@
                     </div>
                 </div>
 
-                <div onclick="openPreview('img/mistic-grey.jpg')" class="group relative cursor-pointer w-[45%] md:w-[23%]">
+                <div onclick="openPreview('img/mistic-grey.jpg')" class="group relative cursor-pointer w-[45%] md:w-[23%]"data-aos="fade-up" data-aos-delay="400">
                     <div class="aspect-[3/4] overflow-hidden bg-gray-800 border border-gray-800 group-hover:border-white transition duration-300">
                         <img src="img/mistic-grey.jpg" alt="Mistic Grey" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
                     </div>
@@ -372,7 +396,7 @@
                     </div>
                 </div>
 
-                <div onclick="openPreview('img/curved.jpg')" class="group relative cursor-pointer w-[45%] md:w-[23%]">
+                <div onclick="openPreview('img/curved.jpg')" class="group relative cursor-pointer w-[45%] md:w-[23%]"data-aos="fade-up" data-aos-delay="500">
                     <div class="aspect-[3/4] overflow-hidden bg-gray-800 border border-gray-800 group-hover:border-white transition duration-300">
                         <img src="img/curved.jpg" alt="Curved" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
                     </div>
@@ -381,9 +405,9 @@
                     </div>
                 </div>
 
-                <div onclick="openPreview('img/bg-lift.jpg')" class="group relative cursor-pointer w-[45%] md:w-[23%]">
+                <div onclick="openPreview('img/bg-lift.jpg')" class="group relative cursor-pointer w-[45%] md:w-[23%]"data-aos="fade-up" data-aos-delay="600">
                     <div class="aspect-[3/4] overflow-hidden bg-gray-800 border border-gray-800 group-hover:border-white transition duration-300">
-                        <img src="img/bg-lift.jpg" alt="Lift" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                        <img src="img/bg-lift.jpg" alt="Lift" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-80 group-hover:op acity-100">
                     </div>
                     <div class="mt-3 text-center md:text-left">
                         <h3 class="text-sm font-bold uppercase tracking-widest text-yellow-400">Lift Photobox</h3>
@@ -394,7 +418,7 @@
         </div>
     </section>
 
- <footer id="contact" class="bg-black text-white pt-24 pb-12 border-t border-gray-900">
+ <footer id="contact" class="bg-black text-white pt-24 pb-12 border-t border-gray-900" data-aos="fade-in" data-aos-duration="1000">
         <div class="max-w-7xl mx-auto px-6">
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16">
@@ -544,7 +568,7 @@
         
         <img id="previewImage" src="" alt="Full Preview" class="max-h-[85vh] max-w-full rounded-lg shadow-2xl object-contain transform transition duration-300 scale-95 opacity-0">
         
-        <p class="absolute bottom-6 text-gray-400 text-sm tracking-widest uppercase">Tap anywhere to close</p>
+        <p class="absolute bottom-6 text-gray-400 text-sm tracking-widest uppercase">Ketuk dimanapun untuk Kembali</p>
     </div>
 
     <script>
@@ -581,5 +605,13 @@
             }, 300);
         }
     </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+    AOS.init({
+    duration: 1000,
+    once: true,
+    });
+</script>
 </body>
 </html>
